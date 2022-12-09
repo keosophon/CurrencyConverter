@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+    <string name="action_settings">Settings</string>
+	<string-array name="currencies">
+		<item>USD</item>
+		<item>NZD</item>
+		<item>AUD</item>
+	</string-array>
+</resources>
