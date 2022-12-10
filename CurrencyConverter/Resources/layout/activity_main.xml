@@ -17,41 +17,69 @@
         android:textColor="#ffffff"
         android:background="#FF0000"
         android:textSize="50px"/>
-    <TextView
-        android:text="Please input today exchange rate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtRate"
-        android:gravity=" center"
-        android:textSize="35px"
-        android:layout_marginTop="35px"/>
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtInputRate"
-        android:gravity="center"/>
-    <TextView
-        android:text="Please select following exchange currencies"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtCurrency"
-        android:gravity=" center"
-        android:textSize="35px"
-        android:layout_marginTop="35px"/>
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
-        android:layout_margin="35px">
+        android:id="@+id/linearLayout2"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="20px">
+        <TextView
+            android:text="Rate:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/txtRate"
+            android:gravity=" center"
+            android:textSize="35px"
+            android:layout_marginLeft="50px"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="45.5dp"
+            android:id="@+id/txtInputRate"
+            android:textColor="#ff0000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4" >
+        <TextView
+            android:text="Amount:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/txtAmount" 
+            android:textSize="35px"
+            android:layout_marginLeft="10px"
+            android:layout_marginTop="50px"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="303.5dp"
+            android:layout_height="55.0dp"
+            android:id="@+id/txtInputAmount"
+            android:layout_marginBottom="0.0dp" 
+            android:textColor="#ff0000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="10px">
         <TextView
             android:text="From:"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/txtFrom"
             android:textSize="35px"
+            android:layout_marginLeft="48px"
             android:layout_marginRight="10px"/>
         <Spinner
             android:layout_width="wrap_content"
@@ -69,20 +97,21 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/spnToCurrency" />
-        <TextView
-        android:text="Result:"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtResult"
-        android:layout_marginLeft="35px"
-        android:layout_marginRight="10px"
-        android:textSize="35px"/>
     </LinearLayout>
+    <TextView
+            android:text="Result:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtResult"
+            android:layout_marginTop="50px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="10px"
+            android:textSize="35px"/>
     <Button
-        android:text="Button"
+        android:text="Convert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnConvert"
-        android:layout_marginTop="35px"
+        android:layout_marginTop="50px"
         android:layout_gravity="center"/>
 </LinearLayout>
