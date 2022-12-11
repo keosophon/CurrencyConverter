@@ -26,7 +26,7 @@
         android:id="@+id/linearLayout2"
         android:layout_marginTop="50px"
         android:layout_marginLeft="10px"
-        android:layout_marginRight="20px">
+        android:layout_marginRight="0.0dp">
         <TextView
             android:text="Rate:"
             android:layout_width="wrap_content"
@@ -36,10 +36,12 @@
             android:textSize="35px"
             android:layout_marginLeft="50px"/>
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="287.5dp"
             android:layout_height="45.5dp"
             android:id="@+id/txtInputRate"
-            android:textColor="#ff0000"/>
+            android:textColor="#ff0000"
+            android:textSize="35px"
+        />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -47,21 +49,23 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout4" >
+        android:id="@+id/linearLayout4">
         <TextView
             android:text="Amount:"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/txtAmount" 
+            android:id="@+id/txtAmount"
             android:textSize="35px"
             android:layout_marginLeft="10px"
             android:layout_marginTop="50px"/>
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="303.5dp"
+            android:layout_width="285.0dp"
             android:layout_height="55.0dp"
             android:id="@+id/txtInputAmount"
-            android:layout_marginBottom="0.0dp" 
-            android:textColor="#ff0000"/>
+            android:layout_marginBottom="0.0dp"
+            android:textColor="#ff0000"
+            android:textSize="35px"
+        />
     </LinearLayout>
 
     <LinearLayout
@@ -83,8 +87,10 @@
             android:layout_marginRight="10px"/>
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/spnFromCurrency" />
+            android:layout_height="33.0dp"
+            android:id="@+id/spnFromCurrency"
+            android:layout_marginRight="18.0dp" 
+            android:layout_marginTop="-20px"/>
         <TextView
             android:text="To:"
             android:layout_width="wrap_content"
@@ -95,23 +101,60 @@
             android:textSize="35px"/>
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/spnToCurrency" />
+            android:layout_height="30.0dp"
+            android:id="@+id/spnToCurrency"
+            android:layout_marginRight="16.5dp" 
+            android:layout_marginTop="-20px"/>/>
     </LinearLayout>
-    <TextView
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:layout_marginTop="50px">
+        <TextView
             android:text="Result:"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtResult"
-            android:layout_marginTop="50px"
             android:layout_marginLeft="50px"
             android:layout_marginRight="10px"
             android:textSize="35px"/>
-    <Button
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtResultValue"
+            android:textSize="35px"
+            android:textColor="#ff0000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout6"
+        android:layout_marginTop="50px"
+        android:gravity="center"
+        >
+        <Button
         android:text="Convert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnConvert"
-        android:layout_marginTop="50px"
-        android:layout_gravity="center"/>
+        />
+        <Button
+        android:text="Clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnClear"
+        android:layout_marginLeft="20px"
+        />
+    </LinearLayout>
+
+
+    
 </LinearLayout>

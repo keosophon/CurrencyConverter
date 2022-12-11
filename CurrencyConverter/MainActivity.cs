@@ -19,6 +19,7 @@ namespace CurrencyConverter
         private TextView txtResult;
         private double result;
         private Button btnConvert;
+        private Button btnClear;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,23 +32,30 @@ namespace CurrencyConverter
             txtAmount = FindViewById<TextView>(Resource.Id.txtInputAmount);
             fromCurrencies = FindViewById<Spinner>(Resource.Id.spnFromCurrency);
             toCurrencies = FindViewById<Spinner>(Resource.Id.spnToCurrency);
-            txtResult = FindViewById<TextView>(Resource.Id.txtResult);
+            txtResult = FindViewById<TextView>(Resource.Id.txtResultValue);
             btnConvert = FindViewById<Button>(Resource.Id.btnConvert);
+            btnClear = FindViewById<Button>(Resource.Id.btnClear);
 
             //adapter is the bridge between spinner and data.
             //adapter needs both data and its data drop down layout
             ArrayAdapter adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.currencies, Android.Resource.Layout.SimpleSpinnerDropDownItem);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             fromCurrencies.Adapter = adapter;
-            fromCurrencies.OnItemSelectedListener = (AdapterView.IOnItemSelectedListener)this;
             toCurrencies.Adapter = adapter;
-            //fromCurrencies.OnItemSelectedListener = (AdapterView.IOnItemSelectedListener)this;
+            
 
             //link Click event to event handler
             btnConvert.Click += BtnConvert_Click;
+            btnClear.Click += BtnClear_Click;
+            txtRate.RequestFocus();
+        }
 
-            
-
+        private void BtnClear_Click(object sender, System.EventArgs e)
+        {
+            txtRate.Text = "";
+            txtAmount.Text = "";
+            txtResult.Text = "";
+            txtRate.RequestFocus();
         }
 
         private void BtnConvert_Click(object sender, System.EventArgs e)
@@ -55,7 +63,7 @@ namespace CurrencyConverter
 
             if (txtRate.Text == "")
             {
-                txtRate.Text = "Please input rate here";
+                txtRate.Text = "Please input a proper exchange rate";
                 
                 
             }
@@ -67,12 +75,12 @@ namespace CurrencyConverter
                 }
                 catch
                 {
-                    txtRate.Text = "Please input a rate value here";
+                    txtRate.Text = "Please input a proper exchange rate";
                 }
             }
             if (txtAmount.Text == "")
             {
-                txtAmount.Text = "Please input amount here";
+                txtAmount.Text = "Please input a proper exchange amount";
             }
             else
             {
@@ -82,14 +90,26 @@ namespace CurrencyConverter
                 }
                 catch
                 {
-                    txtAmount.Text = "Please input a amount value here";
+                    txtAmount.Text = "Please input a proper exchange amount";
                 }
+            }
+            string from = fromCurrencies.SelectedItem.ToString();
+            string to = toCurrencies.SelectedItem.ToString();
+
+            txtResult.Text = "";
+            if (from==to)
+            {
+                txtResult.Text = System.Convert.ToString(amount);
+            }
+            else
+            {
+                result = rate * amount;
+                txtResult.Text = System.Convert.ToString(result);
             }
         }
 
         
        
-
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
